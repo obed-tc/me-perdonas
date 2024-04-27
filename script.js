@@ -29,7 +29,9 @@ const resultado = document.getElementById("resultado");
 
 let count = 1;
 
-boton_no.addEventListener("click", function () {
+boton_no.addEventListener("mouseover", function () {
+  let sonido = document.getElementById("miSonido");
+  sonido.play();
   const randomX = Math.random() * (window.innerWidth - boton_no.offsetWidth);
   const randomY = Math.random() * (window.innerHeight - boton_no.offsetHeight);
   mensaje.innerText = mensajes[count - 1];
@@ -46,11 +48,12 @@ boton_no.addEventListener("click", function () {
   boton_yes.style.position = "absolute";
   boton_yes.style.left = 40 - count * 3.5 + "%";
   boton_yes.style.top = 50 - count * 3 + "%";
-
   count += 1;
 });
 
 boton_yes.addEventListener("click", function () {
+  let sonido = document.getElementById("miSonido2");
+  sonido.play();
   resultado.style.display = "flex";
   resultado.style.flexDirection = "column";
   resultado.style.alignItems = "center";
